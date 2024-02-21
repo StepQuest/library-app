@@ -11,18 +11,18 @@ function Book(title, author, pages, status) {
 }
   
 
-function addBookToLibrary() {
+// function addBookToLibrary() {
 
-    let newBook = new Book(
-    prompt('Write titile of a new book:'),
-    prompt('Write an author of the book:'),
-    prompt('How many pages does the book has?'),
-    prompt('Have you already done the book?')
-    );
+//     let newBook = new Book(
+//     prompt('Write titile of a new book:'),
+//     prompt('Write an author of the book:'),
+//     prompt('How many pages does the book has?'),
+//     prompt('Have you already done the book?')
+//     );
 
-    myLibrary.push(newBook);
-    console.log(myLibrary);
-}
+//     myLibrary.push(newBook);
+//     console.log(myLibrary);
+// }
 
 
 addBookToLibrary();
