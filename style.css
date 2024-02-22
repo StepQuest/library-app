@@ -23,9 +23,9 @@ body, html {
 body {
     background-color: var(--c-dark-main);
     color: var(--c-white-main);
-    display: grid;
-    grid-template-rows: 1fr;
-    place-items: center;
+    /* display: grid; */
+    /* grid-template-rows: 1fr; */
+    /* place-items: center; */
 }
 
 .desc-text {
@@ -75,6 +75,16 @@ input, button, select, option {
     background-color: var(--c-green-dark-main);
 }
 
+/********************** Library ***************************/
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 190px);
+    gap: 30px;
+    padding: 20px;
+
+}
+
 /*********************** Book Card ************************/
 
 .book-card {
@@ -85,7 +95,7 @@ input, button, select, option {
 }
 
 .book-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 5px;
 }
@@ -121,3 +131,4 @@ option {
 
   background-color: var(--c-dark-main);
 }
+
