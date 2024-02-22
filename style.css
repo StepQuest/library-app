@@ -32,7 +32,11 @@ body {
     color: var(--c-gray-main);
 }
 
-input, button {
+svg {
+    fill: var(--c-gray-main);
+}
+
+input, button, select, option {
     font-family: inherit;
     font-size: 87%;
     color: inherit;
@@ -69,4 +73,51 @@ input, button {
 
 .add-first-book:active {
     background-color: var(--c-green-dark-main);
+}
+
+/*********************** Book Card ************************/
+
+.book-card {
+    text-align: center;
+    border: 3px solid var(--c-gray-main);
+    border-radius: 20px;
+    padding: 15px 15px;
+}
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.book-icon {
+    /* height: 200px; */
+}
+
+.book-author {
+    color: var(--c-gray-main);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.book-pages {
+    color: var(--c-gray-main);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+#status-list {
+    text-align: center;
+    width: fit-content;
+    padding: 5px 7px;
+    background-color: transparent;
+    border-radius: 8px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+option {
+
+  background-color: var(--c-dark-main);
 }
