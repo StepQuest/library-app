@@ -132,3 +132,66 @@ option {
   background-color: var(--c-dark-main);
 }
 
+/******************* Add Button *****************/
+
+.add-book {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+/* .add-book  {
+    opacity: 0.3;
+} */
+
+/* .add-btn {
+    color: #a8aaa8;
+    background-color: #444444;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    line-height:0;
+    border-radius: 70px;
+    font-size: 4rem;
+    border: none;
+} */
+
+/* .add-btn {
+    color: #a8aaa8;
+    background-color: #444444;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    line-height:0;
+    border-radius: 20px;
+    font-size: 4rem;
+    border: none;
+} */
+
+.add-btn {
+    color: var(--c-gray-main);
+    background-color: transparent;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    line-height:0;
+    border-radius: 50%;
+    font-size: 4rem;
+    cursor: pointer;
+
+}
+
+.add-btn:active {
+    background-color: #2b2b2b;
+    color: #585858;
+}
