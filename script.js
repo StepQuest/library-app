@@ -23,34 +23,60 @@ function Book(title, author, pages, status) {
 }
   
 
+// Create New Book Card
+
+let libraryHTML = document.querySelector('.library');
+let addBtn = document.querySelector('.add-book');
+let SVGicon = '<svg class="book-icon" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"> <path d="M26,7H9C8.4,7,8,6.6,8,6s0.4-1,1-1h17c0.6,0,1,0.4,1,1S26.6,7,26,7z"></path> <path d="M26,8H11H9C7.9,8,7,7.1,7,6s0.9-2,2-2h17c0.6,0,1-0.4,1-1s-0.4-1-1-1H9C6.8,2,5,3.8,5,6v20c0,2.2,1.8,4,4,4h2h15 c0.6,0,1-0.4,1-1V9C27,8.4,26.6,8,26,8z"></path> </svg>';
+
+function createBookCard() {
+  libraryHTML.insertBefore(document.createElement('div'), addBtn);
+  document.querySelector('div:nth-last-child(3)').classList.add('book-card');
+    // libraryHTML.appendChild(document.createElement('div')).classList.add('book-card');
+    let createdNewBookCard = document.querySelector('div:nth-last-child(3)');
+
+    createdNewBookCard.appendChild(document.createElement('h1')).classList.add('book-title');
+    createdNewBookCard.innerHTML += SVGicon;
+    createdNewBookCard.appendChild(document.createElement('h4')).classList.add('book-author');
+    createdNewBookCard.appendChild(document.createElement('p')).classList.add('book-pages');
+
+}
+
+
+// Show All Books From The Array
+
 function showBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
-    addBookCard();
+    createBookCard();
 
-    document.querySelector('.book-card:last-child .book-title').textContent = myLibrary[i].title;
-    document.querySelector('.book-card:last-child .book-author').textContent = myLibrary[i].author;
-    document.querySelector('.book-card:last-child .book-pages').textContent = myLibrary[i].pages + ' pages';
-   
+    document.querySelector('div:nth-last-child(3) .book-title').textContent = myLibrary[i].title;
+    document.querySelector('div:nth-last-child(3) .book-author').textContent = myLibrary[i].author;
+    document.querySelector('div:nth-last-child(3) .book-pages').textContent = myLibrary[i].pages + ' pages';
   }
 }
 
-let libraryHTML = document.querySelector('.library');
-let SVGicon = '<svg class="book-icon" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"> <path d="M26,7H9C8.4,7,8,6.6,8,6s0.4-1,1-1h17c0.6,0,1,0.4,1,1S26.6,7,26,7z"></path> <path d="M26,8H11H9C7.9,8,7,7.1,7,6s0.9-2,2-2h17c0.6,0,1-0.4,1-1s-0.4-1-1-1H9C6.8,2,5,3.8,5,6v20c0,2.2,1.8,4,4,4h2h15 c0.6,0,1-0.4,1-1V9C27,8.4,26.6,8,26,8z"></path> </svg>';
+// Add new book
 
-function addBookCard() {
-  libraryHTML.appendChild(document.createElement('div')).classList.add('book-card');
-  let createdNewBookCard = document.querySelector('.book-card:last-child');
+function createFormCard() {
+  libraryHTML.appendChild(document.createElement('div')).classList.add('add-book-form', 'book-card');
+  let formCard = document.querySelector('.add-book-form');
 
-  createdNewBookCard.appendChild(document.createElement('h1')).classList.add('book-title');
-  createdNewBookCard.innerHTML += SVGicon;
-  createdNewBookCard.appendChild(document.createElement('h4')).classList.add('book-author');
-  createdNewBookCard.appendChild(document.createElement('p')).classList.add('book-pages');
+  formCard.appendChild(document.createElement('form'));
 }
 
+// createFormCard();
+
+
+
+addBtn.addEventListener('click', () => {
+  document.querySelector('.add-book').style.display = 'none';
+  document.querySelector('.add-book-form').style.display = 'block';
+
+})
 
 // document.createElement('div').classList.add('book-card')
-// showBooks();
-// showBooks();
+showBooks();
+showBooks();
 
 
 // function addBookToLibrary() {

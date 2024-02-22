@@ -195,3 +195,51 @@ option {
     background-color: #2b2b2b;
     color: #585858;
 }
+
+/*********************** Add Book Form **********************/
+
+.add-book-form {
+    display: none;
+}
+
+#add-book-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    text-align: left;
+
+}
+
+.add-book-form label{
+    text-align: left;
+}
+
+.add-book-form input{
+    width: 100%;
+    /* background-color: transparent; */
+    color: #2b2b2b;
+}
+
+.add-btn-form {
+    width: fit-content;
+    background-color: var(--c-green-main);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-btn-form:hover {
+    background-color: var(--c-green-ligh-main);
+}
+
+.add-btn-form:active {
+    background-color: var(--c-green-dark-main);
+}
+
+.book-card:nth-last-child(2) {
+    background-color: red;
+}
