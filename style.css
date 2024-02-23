@@ -116,7 +116,7 @@ input, button, select, option {
     margin-bottom: 15px;
 }
 
-#status-list {
+#status {
     text-align: center;
     width: fit-content;
     padding: 5px 7px;
@@ -255,3 +255,21 @@ option {
     background-color: var(--c-green-dark-main);
 }
 
+/* Remove Button */
+
+.remove-btn {
+    background-color: var(--c-gray-main);
+    color: var(--c-dark-main);
+    border: 3px solid var(--c-dark-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    line-height:0;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    font-weight: 600;
+
+}
