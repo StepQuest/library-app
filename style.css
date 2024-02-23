@@ -135,6 +135,7 @@ option {
 /******************* Add Button *****************/
 
 .add-book {
+    height: 100%;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -200,6 +201,7 @@ option {
 
 .add-book-form {
     display: none;
+    height: 100%;
 }
 
 #add-book-form {
@@ -213,13 +215,26 @@ option {
 }
 
 .add-book-form label{
-    text-align: left;
+    /* text-align: left;
+    margin-bottom: 55px; */
+}
+
+#add-book-form label {
+    /* font-weight: 400; */
+    font-size: 0.9rem;
 }
 
 .add-book-form input{
     width: 100%;
+    opacity: .8;
     /* background-color: transparent; */
     color: #2b2b2b;
+    padding: 3px 5px;
+    font-size: 80%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-top: 1px;
 }
 
 .add-btn-form {
@@ -240,6 +255,3 @@ option {
     background-color: var(--c-green-dark-main);
 }
 
-.book-card:nth-last-child(2) {
-    background-color: red;
-}
