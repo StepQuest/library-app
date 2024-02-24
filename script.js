@@ -12,6 +12,8 @@ const myLibrary = [{
 }
 ];
 
+
+
 // console.log(myLibrary[myLibrary.length - 1].title);
 
 
@@ -46,7 +48,9 @@ function createBookCard() {
     createdNewBookCard.appendChild(document.createElement('p')).classList.add('book-pages');
 
     createdNewBookCard.appendChild(document.createElement('select')).classList.add('status');
-    let selectTag = document.querySelector('.library > div:nth-last-child(2) select')
+    let selectTag = document.querySelector('.library > div:nth-last-child(2) select');
+    selectTag.setAttribute('data-obj-index', myLibrary.length - 1);
+
     selectTag.appendChild(document.createElement('option')).setAttribute('value', 'reading');
     selectTag.appendChild(document.createElement('option')).setAttribute('value', 'completed');
     selectTag.appendChild(document.createElement('option')).setAttribute('value', 'on-hold');
@@ -81,6 +85,8 @@ function showBooks() {
     document.querySelector('.library > div:nth-last-child(2) .book-author').textContent = myLibrary[i].author;
     document.querySelector('.library > div:nth-last-child(2) .book-pages').textContent = myLibrary[i].pages + ' pages';
 
+    document.querySelector('.library > div:nth-last-child(2) select').setAttribute('data-obj-index', i);
+
     document.querySelector('.library > div:nth-last-child(2)').setAttribute('data-obj-index', i);
     document.querySelector('.library > div:nth-last-child(2) > .remove-btn').setAttribute('data-obj-index', i);
     
@@ -97,7 +103,7 @@ function createFormCard() {
   let formCard = document.querySelector('.add-book-form');
 
   formCard.appendChild(document.createElement('form'));
-}
+};
 
 // createFormCard();
 
@@ -112,7 +118,7 @@ BUTTON.addEventListener('click', () => {
   document.querySelector(`#status`).value =  'reading';
   
 
-})
+});
 
 
 let inputTitle = document.querySelector('#title');
@@ -127,20 +133,20 @@ console.log(inputStatus.value);
 
 inputTitle.addEventListener('input', () => {
   bookTitle = inputTitle.value;
-})
+});
 
 inputAuthor.addEventListener('input', () => {
   bookAuthor = inputAuthor.value;
-})
+});
 
 inputPages.addEventListener('input', () => {
   bookPages = inputPages.value;
-})
+});
 
 
 inputStatus.addEventListener('change', () => {
   bookStatus = inputStatus.value;
-})
+});
 
 let inputButton = document.querySelector('.add-btn-form');
 
@@ -163,17 +169,18 @@ inputButton.addEventListener('click', () => {
     inputPages.value = '';
     bookStatus = 'reading';
 
-    updateNodeListRemoveBtns();
+    updRemoveBtns();
+    updStatuses();
     
 
-})
+});
 
 
 
 // Remove Button
-updateNodeListRemoveBtns();
 
-function updateNodeListRemoveBtns() {
+
+function updRemoveBtns() {
   let tesT = document.querySelectorAll('.remove-btn');
 
 tesT.forEach((button) => {
@@ -184,4 +191,26 @@ tesT.forEach((button) => {
     console.log(index);
   })
 })
-}
+};
+
+updRemoveBtns();
+
+// Book Status Listeners
+// The function changes key properties in the object, but don't set new option as selected 
+
+function updStatuses() {
+
+  let allStatuses =  document.querySelectorAll('.status');
+
+  allStatuses.forEach((eachStatus) => {
+    eachStatus.addEventListener('change', () => {
+      let index = eachStatus.getAttribute('data-obj-index');
+
+      myLibrary[index].status = eachStatus.value;
+      console.log(index);
+      console.log(eachStatus.value);
+    })
+  })
+};
+
+updStatuses();
