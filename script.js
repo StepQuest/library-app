@@ -44,9 +44,23 @@ function createBookCard() {
     createdNewBookCard.innerHTML += SVGicon;
     createdNewBookCard.appendChild(document.createElement('h4')).classList.add('book-author');
     createdNewBookCard.appendChild(document.createElement('p')).classList.add('book-pages');
-    createdNewBookCard.appendChild(document.createElement('select'));
+
+    createdNewBookCard.appendChild(document.createElement('select')).classList.add('status');
+    let selectTag = document.querySelector('.library > div:nth-last-child(2) select')
+    selectTag.appendChild(document.createElement('option')).setAttribute('value', 'reading');
+    selectTag.appendChild(document.createElement('option')).setAttribute('value', 'completed');
+    selectTag.appendChild(document.createElement('option')).setAttribute('value', 'on-hold');
+    selectTag.appendChild(document.createElement('option')).setAttribute('value', 'dropped');
+    selectTag.appendChild(document.createElement('option')).setAttribute('value', 'plan-to-read');
+
+    document.querySelector('.library > div:nth-last-child(2) option[value="reading"').textContent = 'Reading';
+    document.querySelector('.library > div:nth-last-child(2) option[value="completed"').textContent = 'Completed';
+    document.querySelector('.library > div:nth-last-child(2) option[value="on-hold"').textContent = 'On-Hold';
+    document.querySelector('.library > div:nth-last-child(2) option[value="dropped"').textContent = 'Dropped';
+    document.querySelector('.library > div:nth-last-child(2) option[value="plan-to-read"').textContent = 'Plan to Read';
+
     createdNewBookCard.appendChild(document.createElement('button')).classList.add('remove-btn');
-    document.querySelector('.library > div:nth-last-child(2) > .remove-btn').textContent = 'X';
+    document.querySelector('.library > div:nth-last-child(2) > .remove-btn').textContent = '-';
     document.querySelector('.library > div:nth-last-child(2) > .remove-btn').setAttribute('data-obj-index', myLibrary.length - 1);
 
 
@@ -95,6 +109,7 @@ let addFormHTML = document.querySelector('.add-book-form');
 BUTTON.addEventListener('click', () => {
   addBtnHTML.style.display = 'none';
   addFormHTML.style.display = 'block';
+  document.querySelector(`#status`).value =  'reading';
   
 
 })
@@ -107,7 +122,7 @@ let inputStatus = document.querySelector('#status');
 let bookTitle;
 let bookAuthor;
 let bookPages;
-let bookStatus;
+let bookStatus = 'reading';
 console.log(inputStatus.value);
 
 inputTitle.addEventListener('input', () => {
@@ -138,6 +153,7 @@ inputButton.addEventListener('click', () => {
     document.querySelector('.library > div:nth-last-child(2) .book-title').textContent = myLibrary[myLibrary.length - 1].title;
     document.querySelector('.library > div:nth-last-child(2) .book-author').textContent = myLibrary[myLibrary.length - 1].author;
     document.querySelector('.library > div:nth-last-child(2) .book-pages').textContent = myLibrary[myLibrary.length - 1].pages + ' pages';
+    document.querySelector(`.library > div:nth-last-child(2) option[value="${bookStatus}"]`).setAttribute('selected', '');
 
     addBtnHTML.style.display = 'block';
     addFormHTML.style.display = 'none';
@@ -145,8 +161,10 @@ inputButton.addEventListener('click', () => {
     inputTitle.value = '';
     inputAuthor.value = '';
     inputPages.value = '';
+    bookStatus = 'reading';
 
     updateNodeListRemoveBtns();
+    
 
 })
 
@@ -162,7 +180,7 @@ tesT.forEach((button) => {
   button.addEventListener('click', () => {
     let index = button.getAttribute('data-obj-index');
 
-    libraryHTML.removeChild(document.querySelector(`.book-card[data-obj-index="${index}"]`));
+    libraryHTML.removeChild(document.querySelector(`div[data-obj-index="${index}"]`));
     console.log(index);
   })
 })

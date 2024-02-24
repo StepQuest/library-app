@@ -88,10 +88,12 @@ input, button, select, option {
 /*********************** Book Card ************************/
 
 .book-card {
+    position: relative;
     text-align: center;
     border: 3px solid var(--c-gray-main);
     border-radius: 20px;
     padding: 15px 15px;
+    box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
 }
 
 .book-title {
@@ -116,7 +118,7 @@ input, button, select, option {
     margin-bottom: 15px;
 }
 
-#status {
+.status, #status {
     text-align: center;
     width: fit-content;
     padding: 5px 7px;
@@ -189,6 +191,7 @@ option {
     border-radius: 50%;
     font-size: 4rem;
     cursor: pointer;
+    box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
 
 }
 
@@ -271,5 +274,8 @@ option {
     width: 13px;
     height: 13px;
     font-weight: 600;
-
+    position: absolute;
+    right: 43%;
+    font-size: 1rem;
 }
+
