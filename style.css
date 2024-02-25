@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
     --c-green-main: #0d761d;
@@ -23,9 +23,6 @@ body, html {
 body {
     background-color: var(--c-dark-main);
     color: var(--c-white-main);
-    /* display: grid; */
-    /* grid-template-rows: 1fr; */
-    /* place-items: center; */
 }
 
 .desc-text {
@@ -46,7 +43,11 @@ input, button, select, option {
 /***************** Empty Page ******************/
 
 .empty-library {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .empty-library > * {
@@ -54,18 +55,25 @@ input, button, select, option {
 }
 
 .empty-library-icon {
+    margin-top: -100px;
     fill: var(--c-gray-main);
-    width: 250px;
+    width: 300px;
+    margin-bottom: 25px;
 }
 
+.main-text {
+    font-size: 2.5rem;
+}
 
 .add-first-book {
     background-color: var(--c-green-main);
+    font-size: 1rem;
     border-radius: 20px;
     border: none;
     padding: 10px 25px;
     font-weight: 500;
     margin: 20px 0 0 0;
+    cursor: pointer;
 }
 
 .add-first-book:hover {
@@ -79,7 +87,7 @@ input, button, select, option {
 /********************** Library ***************************/
 
 .library {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fit, 190px);
     grid-auto-rows: 310px;
     gap: 30px;
@@ -95,7 +103,6 @@ input, button, select, option {
     border-radius: 20px;
     padding: 15px 15px;
     box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
-
 }
 
 .book-title {
@@ -105,10 +112,6 @@ input, button, select, option {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.book-icon {
-    /* height: 200px; */
 }
 
 .book-author {
@@ -152,44 +155,7 @@ option {
     height: 100%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    /* opacity: 0.25; */
-
 }
-
-/* .add-book  {
-    opacity: 0.3;
-} */
-
-/* .add-btn {
-    color: #a8aaa8;
-    background-color: #444444;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    line-height:0;
-    border-radius: 70px;
-    font-size: 4rem;
-    border: none;
-} */
-
-/* .add-btn {
-    color: #a8aaa8;
-    background-color: #444444;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    line-height:0;
-    border-radius: 20px;
-    font-size: 4rem;
-    border: none;
-} */
 
 .add-btn {
     color: var(--c-gray-main);
@@ -206,7 +172,6 @@ option {
     font-size: 4rem;
     cursor: pointer;
     box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
-
 }
 
 .add-btn:active {
@@ -227,8 +192,6 @@ option {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    /* text-align: left; */
-
 }
 
 #add-book-form > div {
@@ -236,22 +199,13 @@ option {
     text-align: left;
 }
 
-
-
-.add-book-form label{
-    /* text-align: left;
-    margin-bottom: 55px; */
-}
-
 #add-book-form label {
-    /* font-weight: 400; */
     font-size: 0.9rem;
 }
 
 .add-book-form input{
     width: 100%;
     opacity: .8;
-    /* background-color: transparent; */
     color: #2b2b2b;
     padding: 3px 5px;
     font-size: 80%;
@@ -269,7 +223,6 @@ option {
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
-    
 }
 
 .add-btn-form:hover {
@@ -289,15 +242,10 @@ option {
 /* Remove Button */
 
 .remove-btn {
-    /* background-color: var(--c-gray-main); */
     background-color: var(--c-dark-main);
-    /* outline: red 2px solid; */
-    /* color: var(--c-dark-main); */
     border: 3px solid var(--c-dark-main);
-    
     justify-content: center;
     align-items: center;
-    /* padding: 10px; */
     line-height:0;
     border-radius: 100%;
     cursor: pointer;
@@ -308,7 +256,6 @@ option {
     bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
-    /* display: inline; */
     font-size: 1rem;
 }
 
@@ -320,12 +267,9 @@ option {
     fill: #504f4f;
 }
 
-
 input:focus {
     background-color: #e9e7e7;
 }
-
-
 
 input:valid {
     /* border-bottom: 2px solid rgb(255, 0, 85); */
@@ -335,13 +279,7 @@ input:valid {
 
 input:invalid {
     border-bottom: solid 2px rgb(209, 49, 49);
-    /* border-bottom: 3px solid red; */
-    /* border-left: 3px solid red; */
-    /* border-right: 3px solid red; */
 }
-
-
-
 
 input:placeholder-shown  {
     border-bottom: solid 2px #343434;
