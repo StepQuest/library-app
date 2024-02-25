@@ -18,15 +18,15 @@
            <form id="add-book-form" method="POST" action="">
             <div>
                 <label for="title">Title</label>
-                <input id="title" type="text" placeholder="Dolly Molly">
+                <input id="title" type="text" pattern="[A-Za-z0-9 ]{1,50}" required>
             </div>
             <div>
                 <label for="author">Author</label>
-                <input id="author" type="text">
+                <input id="author" type="text" pattern="[A-Za-z.\- ]{1,50}" required>
             </div>
             <div>
                 <label for="pages">Pages</label>
-                <input id="pages" type="text">
+                <input id="pages" type="text" pattern="\d{1,4}" required>
             </div>
 
             <select name="" id="status">

@@ -32,8 +32,9 @@ body {
     color: var(--c-gray-main);
 }
 
-svg {
+.book-icon {
     fill: var(--c-gray-main);
+    opacity: 0.9;
 }
 
 input, button, select, option {
@@ -80,9 +81,9 @@ input, button, select, option {
 .library {
     display: grid;
     grid-template-columns: repeat(auto-fit, 190px);
+    grid-auto-rows: 310px;
     gap: 30px;
     padding: 20px;
-
 }
 
 /*********************** Book Card ************************/
@@ -94,12 +95,16 @@ input, button, select, option {
     border-radius: 20px;
     padding: 15px 15px;
     box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
+
 }
 
 .book-title {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .book-icon {
@@ -110,6 +115,9 @@ input, button, select, option {
     color: var(--c-gray-main);
     font-weight: 500;
     font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .book-pages {
@@ -261,21 +269,41 @@ option {
 /* Remove Button */
 
 .remove-btn {
-    background-color: var(--c-gray-main);
-    color: var(--c-dark-main);
+    /* background-color: var(--c-gray-main); */
+    background-color: var(--c-dark-main);
+    /* outline: red 2px solid; */
+    /* color: var(--c-dark-main); */
     border: 3px solid var(--c-dark-main);
-    display: flex;
+    
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
     line-height:0;
     border-radius: 100%;
     cursor: pointer;
-    width: 13px;
-    height: 13px;
+    width: 30px;
+    height: 30px;
     font-weight: 600;
     position: absolute;
-    right: 43%;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: inline; */
     font-size: 1rem;
 }
 
+input:focus {
+    background-color: #e9e7e7;
+}
+
+input:valid {
+    /* border-bottom: 2px solid rgb(255, 0, 85); */
+    border-bottom: solid 2px rgb(121, 184, 28);
+}
+
+input:invalid {
+    border-bottom: solid 2px rgb(209, 49, 49);
+    /* border-bottom: 3px solid red; */
+    /* border-left: 3px solid red; */
+    /* border-right: 3px solid red; */
+}
