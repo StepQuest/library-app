@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+
     <div class="library">
 
         <div class="anchor">
@@ -18,15 +20,15 @@
            <form id="add-book-form" method="POST" action="">
             <div>
                 <label for="title">Title</label>
-                <input id="title" type="text" pattern="[A-Za-z0-9 ]{1,50}" required>
+                <input id="title" type="text" pattern="[A-Za-z0-9 ]{1,50}" required placeholder="">
             </div>
             <div>
                 <label for="author">Author</label>
-                <input id="author" type="text" pattern="[A-Za-z.\- ]{1,50}" required>
+                <input id="author" type="text" pattern="[A-Za-z.\- ]{1,50}" required placeholder="">
             </div>
             <div>
                 <label for="pages">Pages</label>
-                <input id="pages" type="text" pattern="\d{1,4}" required>
+                <input id="pages" type="text" pattern="\d{1,5}" required placeholder="">
             </div>
 
             <select name="" id="status">
@@ -38,7 +40,7 @@
             </select>
 
             
-            <button class="add-btn-form" type="button">Add Book</button>
+            <button class="add-btn-form" type="button" disabled>Add Book</button>
            </form>
         </div>
     </div>

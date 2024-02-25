@@ -6,7 +6,7 @@
     --c-green-dark-main: #13611f;
     --c-gray-main: #7c7c7c;
     --c-dark-main: #343434;
-    --c-white-main: #e8e9e8;
+    --c-white-main: #e2e2e2;
 }
 
 * {
@@ -221,9 +221,16 @@ option {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    text-align: left;
+    /* text-align: left; */
 
 }
+
+#add-book-form > div {
+    width: 130px;
+    text-align: left;
+}
+
+
 
 .add-book-form label{
     /* text-align: left;
@@ -256,6 +263,7 @@ option {
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
+    
 }
 
 .add-btn-form:hover {
@@ -264,6 +272,12 @@ option {
 
 .add-btn-form:active {
     background-color: var(--c-green-dark-main);
+}
+
+.add-btn-form:disabled {
+    background-color: #686868;
+    color: #979797;
+    box-shadow: inset 1px 2px 1px 1px rgba(0,0,0,0.7);
 }
 
 /* Remove Button */
@@ -292,18 +306,31 @@ option {
     font-size: 1rem;
 }
 
+
+
 input:focus {
     background-color: #e9e7e7;
 }
+
+
 
 input:valid {
     /* border-bottom: 2px solid rgb(255, 0, 85); */
     border-bottom: solid 2px rgb(121, 184, 28);
 }
 
+
 input:invalid {
     border-bottom: solid 2px rgb(209, 49, 49);
     /* border-bottom: 3px solid red; */
     /* border-left: 3px solid red; */
     /* border-right: 3px solid red; */
+}
+
+
+
+
+input:placeholder-shown  {
+    border-bottom: solid 2px #343434;
+
 }
