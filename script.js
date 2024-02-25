@@ -177,7 +177,7 @@ inputButton.addEventListener('click', () => {
     document.querySelector('.library > div:nth-last-child(2) .book-pages').textContent = myLibrary[myLibrary.length - 1].pages + ' pages';
     document.querySelector(`.library > div:nth-last-child(2) option[value="${bookStatus}"]`).setAttribute('selected', '');
 
-    addBtnHTML.style.display = 'block';
+    addBtnHTML.style.display = 'flex';
     addFormHTML.style.display = 'none';
 
     inputTitle.value = '';

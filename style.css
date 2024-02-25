@@ -131,14 +131,18 @@ input, button, select, option {
     width: fit-content;
     padding: 5px 7px;
     background-color: transparent;
+    border: var(--c-gray-main) 1px solid;
     border-radius: 8px;
     outline: none;
     appearance: none;
     cursor: pointer;
 }
 
-option {
+.status:hover, #status:hover {
+    background-color: #444444;
+}
 
+option {
   background-color: var(--c-dark-main);
 }
 
@@ -147,8 +151,9 @@ option {
 .add-book {
     height: 100%;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
+    /* justify-content: center; */
+    /* opacity: 0.25; */
 
 }
 
@@ -196,7 +201,8 @@ option {
     align-items: center;
     padding: 30px;
     line-height:0;
-    border-radius: 50%;
+    border-radius: 100%;
+    /* border: none; */
     font-size: 4rem;
     cursor: pointer;
     box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
@@ -306,6 +312,13 @@ option {
     font-size: 1rem;
 }
 
+.remove-btn:hover {
+    fill: #9e9e9e;
+}
+
+.remove-btn:active {
+    fill: #504f4f;
+}
 
 
 input:focus {
