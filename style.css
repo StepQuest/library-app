@@ -65,7 +65,7 @@ input, button, select, option {
     font-size: 2.5rem;
 }
 
-.add-first-book {
+.sign-in {
     background-color: var(--c-green-main);
     font-size: 1rem;
     border-radius: 20px;
@@ -76,11 +76,11 @@ input, button, select, option {
     cursor: pointer;
 }
 
-.add-first-book:hover {
+.sign-in:hover {
     background-color: var(--c-green-ligh-main);
 }
 
-.add-first-book:active {
+.sign-in:active {
     background-color: var(--c-green-dark-main);
 }
 
@@ -146,7 +146,7 @@ input, button, select, option {
 }
 
 option {
-  background-color: var(--c-dark-main);
+    background-color: var(--c-dark-main);
 }
 
 /******************* Add Button *****************/
@@ -157,7 +157,7 @@ option {
     align-items: center;
 }
 
-.add-btn {
+.add-book-btn {
     color: var(--c-gray-main);
     background-color: transparent;
     width: 90px;
@@ -168,13 +168,12 @@ option {
     padding: 30px;
     line-height:0;
     border-radius: 100%;
-    /* border: none; */
     font-size: 4rem;
     cursor: pointer;
     box-shadow: 2px 3px 5px 1px rgba(0,0,0,0.3);
 }
 
-.add-btn:active {
+.add-book-btn:active {
     background-color: #2b2b2b;
     color: #585858;
 }
@@ -244,19 +243,13 @@ option {
 .remove-btn {
     background-color: var(--c-dark-main);
     border: 3px solid var(--c-dark-main);
-    justify-content: center;
-    align-items: center;
-    line-height:0;
-    border-radius: 100%;
     cursor: pointer;
     width: 30px;
     height: 30px;
-    font-weight: 600;
     position: absolute;
     bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1rem;
 }
 
 .remove-btn:hover {
@@ -272,7 +265,6 @@ input:focus {
 }
 
 input:valid {
-    /* border-bottom: 2px solid rgb(255, 0, 85); */
     border-bottom: solid 2px rgb(121, 184, 28);
 }
 
